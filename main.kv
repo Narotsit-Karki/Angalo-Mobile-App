@@ -1,0 +1,128 @@
+
+<App_Screen>:
+    Login_Screen:
+
+    Register_Screen:
+
+
+
+
+<Login_Screen>:
+#    canvas.before:
+#        Rectangle:
+#            pos:self.pos
+#            size: self.size
+#            source: "assets/images/background/auth-bg.png"
+
+    MDIconButton:
+        icon: "assets/images/logo-128x128.png"
+        pos_hint: {"center_x":.5,"center_y":.82}
+        icon_size: "95sp"
+
+    MDLabel:
+        color: "#0275d8"
+        text: "Angalo"
+        halign: "center"
+        font_style: "H3"
+        pos_hint: {"center_y":.68}
+    MDLabel:
+        color: "#0275d8"
+        text: "Connecting around the world"
+        font_size: "14sp"
+        halign: "center"
+        pos_hint: {"center_y":.6}
+    MDTextField:
+        id: username
+#        mode: "round"
+        hint_text: "username"
+        pos_hint: {"center_y":.5,"center_x":.5}
+        size_hint_x:.8
+        on_text: root.username_validate(self)
+
+    MDTextField:
+        id: password
+#        mode:"round"
+        hint_text: "password"
+        password: True
+        pos_hint: {"center_x":.5,"center_y":.4}
+        password_mask: "*"
+        size_hint_x: .8
+        on_text: root.password_validate(self)
+
+
+
+    MDFillRoundFlatButton:
+        id: login_button
+        text: "Login"
+        halign: "center"
+        pos_hint: {"center_x":.5,"center_y":.3}
+        size_hint_x: .6
+        on_press: root.authenticate()
+        MDSpinner:
+            id: loading
+            color: "white"
+            active: False
+            determinate: True
+            determinate_time: 0.5
+            size_hint: None, None
+            size: dp(20), dp(20)
+            pos_hint: {'center_x': .5, 'center_y': .5}
+
+    MDLabel:
+        text: "Forgot Password ?"
+        halign: "center"
+        pos_hint: {"center_y":.2,"center_x":.4}
+        font_size: "12sp"
+
+
+    MDLabel:
+        text: "click here"
+        underline: True
+        color: "#0275d8"
+        pos_hint: {"center_x":.62,"center_y":.2}
+        halign: "center"
+        font_size: "14sp"
+    MDLabel:
+        text: "Not joined us yet? "
+        halign: "center"
+        pos_hint: {"center_y":.1,"center_x":.4}
+        font_size: "12sp"
+
+    MDRoundFlatButton:
+        text : "Join us"
+        halign: "center"
+        pos_hint: {"center_y":.1,"center_x":.65}
+        on_press:
+            root.manager.current = "register_screen"
+
+<Register_Screen>:
+    MDLabel:
+        text: "Register"
+        halign: "center"
+
+
+<Pre_Enter_Screen>:
+
+    MDIconButton:
+        icon: "assets/images/logo-128x128.png"
+        pos_hint: {"center_x":.5,"center_y":.82}
+        icon_size: "95sp"
+
+    MDLabel:
+        color: "#0275d8"
+        text: "Angalo"
+        halign: "center"
+        font_style: "H3"
+        pos_hint: {"center_y":.68}
+    MDLabel:
+        color: "#0275d8"
+        text: "Loading ... "
+        font_size: "14sp"
+        halign: "center"
+        pos_hint: {"center_y":.6}
+    MDSpinner:
+        color:"#0275d8"
+        pos_hint: {"center_y":.5,"center_x":.5}
+        active: True
+        size_hint: None,None
+        size: dp(50),dp(50)

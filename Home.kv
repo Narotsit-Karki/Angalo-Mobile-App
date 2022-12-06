@@ -1,0 +1,192 @@
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            id:top_bar
+            left_action_items: [['menu',lambda x:nav_drawer.set_state("open")]]
+            right_action_items: [['plus-circle',lambda x:x],['facebook-messenger',lambda x:x],['cog',lambda x:x]]
+
+        MDBottomNavigation:
+
+            MDBottomNavigationItem:
+                name: "item1"
+                icon: "home"
+                badge_icon: "numeric-5"
+
+                MDBoxLayout:
+
+                    ScrollView:
+                        bar_width: 0
+                        MDBoxLayout:
+                            adaptive_height: True
+                            orientation: "vertical"
+                            MDTextField:
+
+                                size_hint: None,None
+                                size_hint_y:.7
+                                size_hint_x: 1
+                                height: "300dp"
+                                adaptive_height: True
+                                hint_text: "Whats on your mind ? NarotsitK"
+                                max_height: "200dp"
+                                mode: "fill"
+                                fill_color: 0, 0, 0, .4
+                                multiline: True
+
+                            GridLayout:
+                                cols: 5
+                                padding: dp(2)
+                                MDIconButton:
+                                    icon:'image-multiple'
+                                MDIconButton:
+                                    icon:'play-box'
+                                MDIconButton:
+                                    icon:'account-multiple'
+                                MDIconButton:
+                                    icon:'google-maps'
+
+
+
+
+
+            MDBottomNavigationItem:
+                name: "item2"
+                icon:"pencil-outline"
+
+                MDLabel:
+                    text: "Event Create"
+                    halign: "center"
+
+            MDBottomNavigationItem:
+                name:"item3"
+                icon:"bell"
+                badge_icon: "numeric-10"
+
+                MDLabel:
+                    text: "Notifications"
+                    halign: "center"
+
+            MDBottomNavigationItem:
+                name: "item4"
+                icon:"magnify"
+
+                MDLabel:
+                    text: "Search"
+                    halign: "center"
+
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        MDNavigationDrawerMenu:
+
+            MDNavigationDrawerHeader:
+                id: side_head
+                title: "Angalo"
+                text: "social network site"
+                title_color: "#0275d8"
+                source: "assets/images/logo-64x64.png"
+                spacing: "4dp"
+                padding: "12dp", 0, 0, "5dp"
+
+            MDNavigationDrawerDivider:
+
+            TwoLineIconListItem:
+                id: side_profile
+                text: "NarotsitK"
+                secondary_text: "view profile"
+                text_color: "#0275d8"
+                secondary_text_color: "green"
+                Side_Profile_Pic:
+                    id: side_profile_pic
+                    texture: self.texture
+
+
+            MDNavigationDrawerItem
+                id: news_feed
+                icon: "assets/images/icons/left-sidebar/newsfeed.png"
+                right_text: "..."
+                text_right_color: "#0275d8"
+                text: "News Feed"
+
+            MDNavigationDrawerItem
+                id: messages
+                icon: "assets/images/icons/left-sidebar/message.png"
+                right_text: "+99"
+                text_right_color: "#0275d8"
+                text: "Messages"
+
+            MDNavigationDrawerItem
+                id: groups
+                icon: "assets/images/icons/left-sidebar/group.png"
+                right_text: "+99"
+                text_right_color: "#0275d8"
+                text: "Groups"
+
+
+            MDNavigationDrawerItem
+                id: events
+                icon: "assets/images/icons/left-sidebar/event.png"
+                right_text: "+99"
+                text_right_color: "#0275d8"
+                text: "Events"
+
+
+
+            MDNavigationDrawerItem
+                id: saved
+                icon: "assets/images/icons/left-sidebar/saved.png"
+                right_text: "22"
+                text_right_color: "#0275d8"
+                text: "Saved"
+
+
+            MDNavigationDrawerItem
+                id: find_friends
+                icon: "assets/images/icons/left-sidebar/find-friends.png"
+                right_text: "+99"
+                text_right_color: "#0275d8"
+                text: "Find Friends"
+
+
+            MDNavigationDrawerItem
+                id: matches
+                icon: "assets/images/icons/left-sidebar/matches.png"
+                right_text: "+99"
+                text: "Matches"
+                text_right_color: "#0275d8"
+
+
+            MDNavigationDrawerItem
+                id: angalo_for
+                icon: "assets/images/icons/left-sidebar/team.png"
+                text: "Angalo for"
+
+<Home_Screen_Tab>:
+    orientation:"vertical"
+    spacing:"4dp"
+    size_hint_x:.5
+
+#GridLayout:
+#        id: post_grid
+#        cols:1
+#        MDTextField:
+#            hint_text: "what is on your mind? NarotsitK"
+#            max_height: "300dp"
+#            size_hint_y: .3
+#            mode: "fill"
+#            fill_color: 0, 0, 0, .4
+#            multiline: True
+#            spacing: "19dp"
+#        GridLayout:
+#            cols: 5
+#            MDIconButton:
+#                icon:"image-multiple"
+#            MDIconButton:
+#                icon:"play-box"
+#            MDIconButton:
+#                icon:"account-multiple-outline"
+#            MDIconButton:
+#                icon:"google-maps"
+#            MDRaisedButton:
+#                text:"post"
+#                md_bg_color:"#0275d8"
